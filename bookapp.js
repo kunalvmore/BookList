@@ -73,6 +73,11 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     const author = document.querySelector('#author').value;
     const isbn = document.querySelector('#isbn').value;
 
+    // validation
+    if(title === '' || author === '' || isbn === ''){
+        alert('Please fill in all fields');
+    }else{
+
     //instatiate book
     const book = new Book(title, author, isbn);
 
@@ -81,7 +86,10 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
     //clear fields
     UI.clearFirlds();
-})
+    }
+
+   
+});
 
 // Event: Remove a Book
 document.querySelector('#book-list').addEventListener('click', (e)=>
